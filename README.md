@@ -1,5 +1,5 @@
 
-/* Generee par copilot */
+/* Génerer par copilot */
 
 
 
