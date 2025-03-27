@@ -24,10 +24,10 @@ cd dockerise
 
 ### 2. Configure Environment Variables
 
-Copy the example environment file and configure it as needed:
+Copy the example environment file and configure it if needed:
 
 ```sh
-just update .env if needed
+cp .env.example .env
 ```
 
 Modify `.env` with your database credentials and application settings if you modified any of them.
