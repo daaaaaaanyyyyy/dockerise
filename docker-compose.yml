@@ -1,0 +1,59 @@
+services:
+    # we used php service to build our image ,and mysql database
+    # php service
+    php:
+        build:
+            context: .
+            target: php
+            args:
+                - APP_ENV=${APP_ENV}
+        environment:
+            - APP_ENV=${APP_ENV}
+            - CONTAINER_ROLE=app
+        working_dir: /var/www
+        volumes:
+            - ./:/var/www
+        ports:
+            - 8000:8000
+        depends_on:
+            mysql:
+                condition: service_healthy
+
+    # mysql service
+    mysql:
+        image: mysql:latest
+        container_name: mysqldb
+        restart: always
+        environment:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: testdb
+          MYSQL_USER: user
+          MYSQL_PASSWORD: password
+        ports:
+          - "3306:3306"
+        volumes:
+          - mysql_data:/var/lib/mysql
+        healthcheck:
+          test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+          interval: 10s
+          timeout: 5s
+          retries: 5
+
+
+    # phpMyAdmin service
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin_container
+        restart: always
+        environment:
+          PMA_HOST: mysql
+          MYSQL_ROOT_PASSWORD: root  # تطابق مع MySQL
+        ports:
+          - "9000:80"
+        depends_on:
+            mysql:
+                condition: service_healthy
+
+
+volumes:
+    mysql_data:

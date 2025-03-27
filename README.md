@@ -1,5 +1,5 @@
 
-/* Génerer par copilot , je vais ajouter un autre fichier nommer Laravel with apache and mysql in docker*/
+/* Génerer par copilot , je vais ajouter un autre fichier nommer Laravel php and mysql with phpmyadmin in docker*/
 
 
 
