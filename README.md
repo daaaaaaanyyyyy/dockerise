@@ -64,16 +64,6 @@ To remove all containers, networks, and volumes:
 ```sh
 docker-compose down -v
 ```
-
-## Troubleshooting
-
-- **Port 8000 already in use?** Run `docker ps` to find running containers and stop conflicting services.
-- **Database connection issues?** Ensure MySQL container is healthy: `docker ps` should show `(healthy)`.
-- **Laravel permissions issue?** Run:
-  ```sh
-  docker-compose exec php chmod -R 777 storage bootstrap/cache
-  ```
-
 ## Connect to the secret santa with this credentials:
 
 email: 
