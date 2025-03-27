@@ -1,10 +1,10 @@
-# Docker with php,mysql,phpmyadmin
-# Docker guid available on dockerguid.md
+## Docker with php,mysql,phpmyadmin
+## Docker guide available on dockerguid.md
 # Laravel Dockerized Project
 
 ## Overview
 
-This project is a Laravel application containerized with Docker, using PHP 8.2, MySQL, Node.js, and phpMyAdmin.
+This project is a Laravel application containerized with Docker, using PHP 8.2, MySQL, and phpMyAdmin.
 
 ## Prerequisites
 
@@ -43,7 +43,6 @@ This will start:
 - Laravel application (PHP 8.2)
 - MySQL database
 - phpMyAdmin
-- Node.js environment
 
 
 
