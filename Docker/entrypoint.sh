@@ -1,5 +1,5 @@
 composer install --no-progress --no-interaction
-chomd -R 777 storage/* bootstrap/cache
+chomd -R 777 storage bootstrap/cache
 php artisan key:generate
 php artisan migrate --seed --force
 php artisan config:clear
